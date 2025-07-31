@@ -24,9 +24,17 @@ return {
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      vim.g.everforest_enable_italic = true
-      vim.cmd.colorscheme("everforest")
+      -- vim.g.everforest_enable_italic = true
+      -- vim.cmd.colorscheme("everforest")
     end,
+  },
+
+  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
   },
 
   -- add bamboo
@@ -127,7 +135,8 @@ return {
       -- colorscheme = "monokai-pro-default",
       -- colorscheme = "gruvbox-baby",
       -- colorscheme = "catppuccin-frappe",
-      colorscheme = "everforest",
+      -- colorscheme = "everforest",
+      colorscheme = "carbonfox",
 
       -- colorscheme = "kanagawa",
       -- background = "light",
@@ -227,10 +236,10 @@ return {
   -- },
 
   -- disable neo-tree (filesytem browser)
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   enabled = false,
+  -- },
 
   -- disable gitsigns (highlight text that changed from last time)
   -- {
@@ -536,8 +545,8 @@ return {
       },
 
       colors = {
-        info = { "#f5f0bb" }, -- TODO(
-        hint = { "#c8e4b2" }, -- NOTE(
+        info = { "#fcf27e" }, -- TODO( "#f5f0bb"
+        hint = { "#9ade64" }, -- NOTE( "#c8e4b2"
         warning = { "#ffcacc" }, -- WARN(
         -- error = {""}, -- FIX(
         hack = { "#96b6c5" }, -- HACK(

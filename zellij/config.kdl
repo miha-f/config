@@ -12,6 +12,7 @@ keybinds clear-defaults=true {
         bind "%" { NewPane "right"; SwitchToMode "locked"; }
         bind "\"" { NewPane "down"; SwitchToMode "locked"; }
         bind "o" { SwitchToMode "pane"; }
+        bind "i" { SwitchToMode "session"; }
 
         bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
