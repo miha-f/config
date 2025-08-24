@@ -39,3 +39,8 @@ opt.colorcolumn = "80"
 opt.sidescrolloff = 30
 
 opt.virtualedit = "all"
+
+-- ovverides
+vim.g.snacks_animate = false
+vim.g.ai_cmp = false
+opt.linebreak = false
