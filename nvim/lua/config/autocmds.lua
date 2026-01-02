@@ -16,3 +16,18 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_set_hl(0, "IncSearch", { fg = "#385f38", bg = "#f8f893" })
   end,
 })
+
+-- NOTE(miha): You can use :q to close DiffView panels.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "DiffviewFiles",
+    "DiffviewFilePanel",
+    "DiffviewFileHistory",
+  },
+  callback = function()
+    vim.keymap.set("n", "q", "<cmd>DiffviewClose<cr>", {
+      buffer = true,
+      silent = true,
+    })
+  end,
+})

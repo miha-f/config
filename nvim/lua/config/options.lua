@@ -44,3 +44,9 @@ opt.virtualedit = "all"
 vim.g.snacks_animate = false
 vim.g.ai_cmp = false
 opt.linebreak = false
+
+vim.opt.fillchars:append({ diff = "╱" })
+vim.opt.diffopt:append({
+  "algorithm:histogram",
+  "indent-heuristic",
+})

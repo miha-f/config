@@ -6,7 +6,7 @@ return {
   },
   {
     -- NOTE(miha): This disables automatically closing pairs (i.e. (,",[,...)
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     enabled = false,
   },
 }
