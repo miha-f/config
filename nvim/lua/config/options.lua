@@ -45,8 +45,6 @@ vim.g.snacks_animate = false
 vim.g.ai_cmp = false
 opt.linebreak = false
 
-vim.opt.fillchars:append({ diff = "╱" })
-vim.opt.diffopt:append({
-  "algorithm:histogram",
-  "indent-heuristic",
-})
+opt.shell = "/bin/zsh"
+opt.clipboard = "unnamedplus"
+vim.env.TERM = "xterm-256color"

@@ -3,3 +3,6 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
+
+vim.keymap.set({'n', 'v'}, 'd', '"_d')
+vim.keymap.set({'n', 'v'}, 'x', '"_x')
