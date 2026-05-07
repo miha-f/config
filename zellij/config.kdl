@@ -14,6 +14,7 @@ keybinds clear-defaults=true {
         bind "o" { SwitchToMode "pane"; }
         bind "i" { SwitchToMode "session"; }
 
+        bind "Ctrl b" { SwitchToMode "locked"; }
         bind "h" { MoveFocus "left"; SwitchToMode "locked"; }
         bind "j" { MoveFocus "down"; SwitchToMode "locked"; }
         bind "k" { MoveFocus "up"; SwitchToMode "locked"; }
@@ -236,6 +237,16 @@ keybinds clear-defaults=true {
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
     }
+    shared_except "locked" {
+        // This is the "Tmux-like" seamless navigation
+        bind "Ctrl h" { MoveFocusOrTab "Left"; }
+        bind "Ctrl l" { MoveFocusOrTab "Right"; }
+        bind "Ctrl j" { MoveFocusOrTab "Down"; }
+        bind "Ctrl k" { MoveFocusOrTab "Up"; }
+        
+        // Quick Toggle for Floating Panes (Like your floating terminal)
+        bind "Ctrl f" { ToggleFloatingPanes; }
+    }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
@@ -292,7 +303,7 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-default_layout "compact"
+default_layout "default"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
@@ -354,7 +365,7 @@ scroll_buffer_size 1000000
 //
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
-// copy_command "pbcopy"                     // osx
+copy_command "pbcopy"                     // osx
 // 
 // copy_command "pbcopy"
  
@@ -365,12 +376,12 @@ scroll_buffer_size 1000000
 //   - system (default)
 //   - primary
 // 
-// copy_clipboard "primary"
+copy_clipboard "system"
  
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
 // 
-// copy_on_select true
+copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
